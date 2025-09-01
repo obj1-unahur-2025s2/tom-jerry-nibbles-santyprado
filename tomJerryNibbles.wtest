@@ -1,17 +1,42 @@
 import tomJerryNibbles.*
 
-describe "Grupo de test" {
+describe "casoPrueba 1"{
 
-  test "test 1" {
-    assert.equals(100, 50+50)
+  test "Velocidad Maxima de Tom" {
+    assert.equals(10, tom.velocidadMax())
   }
 
-  test "test 3" {
-    assert.that(true)
+  test "Tom come A Jerry"{
+    tom.comer(jerry)
+    assert.equals(15.2, tom.velocidadMax())
   }
-
-  test "test 4" {
-    assert.notThat(false)
+  test "Tom corre 24 metros"{
+    tom.comer(jerry)
+    tom.correr(24)
+    assert.equals(14, tom.velocidadMax())
   }
-
+  test "Tom come a Nibbles"{
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    assert.equals(18.7, tom.velocidadMax())
+  }
+  test "Tom vuelve a comer a Jerry"{
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    jerry.cumpleAnio()
+    tom.comer(jerry)
+    assert.equals(25.9, tom.velocidadMax())
+  }
+  test "Tom corre 38 metros"{
+    tom.comer(jerry)
+    tom.correr(24)
+    tom.comer(nibbles)
+    jerry.cumpleAnio()
+    tom.comer(jerry)
+    tom.correr(38)
+    assert.equals(24, tom.velocidadMax())
+  }
 }
+
